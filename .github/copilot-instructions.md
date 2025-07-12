@@ -1,3 +1,5 @@
+<!-- I want to review in Japanese. -->
+
 # コード規約 - Spring Boot API プロジェクト（レビュー観点）
 
 ## 1. 基本設計原則
@@ -87,3 +89,5 @@ jp.ne.papapa.copilot_instructions/
 ## 4. その他開発ルール
 - 想定外の例外処理（DBエラーなど）はControllerAdviceで行うので、個別での処理は不要
 - 開始ログや終了ログはAspectで一括管理するので、個別での処理は不要
+
+<!-- I want to review in Japanese. -->
