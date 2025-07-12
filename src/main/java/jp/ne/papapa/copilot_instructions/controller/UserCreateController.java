@@ -11,15 +11,17 @@ import jp.ne.papapa.copilot_instructions.dto.UserCreateRequestDto;
 import jp.ne.papapa.copilot_instructions.dto.UserResponseDto;
 import jp.ne.papapa.copilot_instructions.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.web.bind.annotation.PostMapping;
 
 
 @RestController
 @RequiredArgsConstructor
+@Slf4j
 public class UserCreateController {
     
     private final UserRepository userRepository;
-    private static final Logger log = LoggerFactory.getLogger(UserCreateController.class);
 
     @PostMapping("/api/v1/users")
     public String postMethodName(@RequestBody String entity) {
