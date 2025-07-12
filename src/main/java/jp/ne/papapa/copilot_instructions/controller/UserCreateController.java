@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import jakarta.validation.Valid;
 import jp.ne.papapa.copilot_instructions.dto.UserCreateRequestDto;
 import jp.ne.papapa.copilot_instructions.dto.UserResponseDto;
 import jp.ne.papapa.copilot_instructions.repository.UserRepository;
@@ -27,7 +28,7 @@ public class UserCreateController {
         return entity;
     }
     
-    public ResponseEntity<UserResponseDto> createUser(@RequestBody UserCreateRequestDto userDto) {
+    public ResponseEntity<UserResponseDto> createUser(@Valid @RequestBody UserCreateRequestDto userDto) {
         
         // 開始ログの出力
         log.info("POST /api/v1/users - Creating new user: {}", userDto);
