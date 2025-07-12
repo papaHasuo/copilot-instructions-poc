@@ -10,6 +10,7 @@ import jakarta.validation.Valid;
 import jp.ne.papapa.copilot_instructions.dto.UserCreateRequestDto;
 import jp.ne.papapa.copilot_instructions.dto.UserResponseDto;
 import jp.ne.papapa.copilot_instructions.repository.UserRepository;
+import jp.ne.papapa.copilot_instructions.service.UserCreateService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -21,7 +22,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Slf4j
 public class UserCreateController {
     
-    private final UserRepository userRepository;
+    private final UserCreateService userCreateService;
     
     @PostMapping("/api/v1/users")
     public ResponseEntity<UserResponseDto> createUser(@Valid @RequestBody UserCreateRequestDto userDto) {
@@ -31,8 +32,8 @@ public class UserCreateController {
 
         // ユーザーの作成処理
         try{
-            UserResponseDto createdUser = UserResponseDto.fromEntity(userRepository.save(userDto.toEntity()));
-            return ResponseEntity.ok(createdUser); // 作成したユーザー情報を返す
+            UserResponseDto createdUser = userCreateService.createUser(userDto);
+            return ResponseEntity.status(201).body(createdUser); // 作成成功時は201を返す
         } catch (Exception e) {
             log.error("Error creating user: {}", e.getMessage());
             return ResponseEntity.status(500).body(null); // エラー時は500を返す
