@@ -27,7 +27,7 @@ public class UserCreateController {
         return entity;
     }
     
-    public ResponseEntity<UserResponseDto> creaiteUser(@RequestBody UserCreateRequestDto userDto) {
+    public ResponseEntity<UserResponseDto> createUser(@RequestBody UserCreateRequestDto userDto) {
         
         // 開始ログの出力
         log.info("POST /api/v1/users - Creating new user: {}", userDto);
