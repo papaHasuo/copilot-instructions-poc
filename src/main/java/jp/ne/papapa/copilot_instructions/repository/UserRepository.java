@@ -53,5 +53,5 @@ public interface UserRepository extends JpaRepository<User, Long> {
      * @param email 確認するメールアドレス
      * @return 存在する場合はtrue、存在しない場合はfalse
      */
-    boolean exixtsByEmail(String email);
+    boolean existsByEmail(String email);
 }
