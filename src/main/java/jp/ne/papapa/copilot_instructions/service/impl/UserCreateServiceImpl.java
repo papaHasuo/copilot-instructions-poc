@@ -12,6 +12,10 @@ import jp.ne.papapa.copilot_instructions.service.UserCreateService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * ユーザー登録サービスの実装
+ * 新規ユーザー登録のビジネスロジックを提供
+ */
 @Service
 @RequiredArgsConstructor
 @Transactional
