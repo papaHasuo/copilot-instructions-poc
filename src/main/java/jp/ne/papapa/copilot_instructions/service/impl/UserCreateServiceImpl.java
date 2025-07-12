@@ -25,8 +25,6 @@ public class UserCreateServiceImpl implements UserCreateService {
     private final UserRepository userRepository;
     private final ExceptionFactory exceptionFactory;
 
-    // ここに必要なフィールドやメソッドを実装します
-
     @Override
     public UserResponseDto createUser(UserCreateRequestDto request) {
         
