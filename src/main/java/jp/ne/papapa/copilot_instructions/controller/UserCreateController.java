@@ -22,14 +22,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class UserCreateController {
     
     private final UserRepository userRepository;
-
-    @PostMapping("/api/v1/users")
-    public String postMethodName(@RequestBody String entity) {
-        //TODO: process POST request
-        
-        return entity;
-    }
     
+    @PostMapping("/api/v1/users")
     public ResponseEntity<UserResponseDto> createUser(@Valid @RequestBody UserCreateRequestDto userDto) {
         
         // 開始ログの出力
