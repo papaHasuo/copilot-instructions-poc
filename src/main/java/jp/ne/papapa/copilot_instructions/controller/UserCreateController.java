@@ -2,7 +2,6 @@ package jp.ne.papapa.copilot_instructions.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import jakarta.validation.Valid;
 import jp.ne.papapa.copilot_instructions.dto.UserCreateRequestDto;
