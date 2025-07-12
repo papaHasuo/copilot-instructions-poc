@@ -47,4 +47,11 @@ public interface UserRepository extends JpaRepository<User, Long> {
      */
     @Query("SELECT COUNT(u) FROM User u WHERE u.status = :status")
     long countByStatus(@Param("status") User.UserStatus status);
+
+    /**
+     * 指定したメールアドレスのユーザーの存在確認
+     * @param email 確認するメールアドレス
+     * @return 存在する場合はtrue、存在しない場合はfalse
+     */
+    boolean exixtsByEmail(String email);
 }
