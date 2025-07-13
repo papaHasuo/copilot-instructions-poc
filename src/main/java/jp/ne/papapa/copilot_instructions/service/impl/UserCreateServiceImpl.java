@@ -6,16 +6,18 @@ import org.springframework.stereotype.Service;
 import jp.ne.papapa.copilot_instructions.dto.UserCreateRequestDto;
 import jp.ne.papapa.copilot_instructions.dto.UserResponseDto;
 import jp.ne.papapa.copilot_instructions.repository.UserRepository;
+import jp.ne.papapa.copilot_instructions.service.UserCreateService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class UserCreateServiceImpl {
+public class UserCreateServiceImpl implements UserCreateService {
     
     private final UserRepository userRepository;
 
+    @Override
     public UserResponseDto createUser(UserCreateRequestDto request) {
         log.info("Creating user with email: {}", request.getEmail());
         
