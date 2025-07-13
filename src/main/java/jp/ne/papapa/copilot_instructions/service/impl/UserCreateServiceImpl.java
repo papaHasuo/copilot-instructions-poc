@@ -20,7 +20,6 @@ public class UserCreateServiceImpl implements UserCreateService {
 
     @Override
     public UserResponseDto createUser(UserCreateRequestDto request) {
-        log.info("Creating user with email: {}", request.getEmail());
         
         // ユーザーの作成処理
         try{

@@ -26,9 +26,6 @@ public class UserCreateController {
     
     @PostMapping("/api/v1/users")
     public ResponseEntity<UserResponseDto> createUser(@Valid @RequestBody UserCreateRequestDto userDto) {
-        
-        // 開始ログの出力
-        log.info("POST /api/v1/users - Creating new user: {}", userDto);
 
         // ユーザーの作成処理
         try{
