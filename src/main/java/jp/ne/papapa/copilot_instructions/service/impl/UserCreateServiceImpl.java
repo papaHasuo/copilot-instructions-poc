@@ -12,7 +12,6 @@ import lombok.extern.slf4j.Slf4j;
 
 @Service
 @RequiredArgsConstructor
-@Slf4j
 @Transactional
 public class UserCreateServiceImpl implements UserCreateService {
 
