@@ -1,6 +1,5 @@
 package jp.ne.papapa.copilot_instructions.service.impl;
 
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import jakarta.transaction.Transactional;
