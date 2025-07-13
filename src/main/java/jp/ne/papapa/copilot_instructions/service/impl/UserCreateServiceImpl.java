@@ -15,20 +15,13 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Transactional
 public class UserCreateServiceImpl implements UserCreateService {
-    
+
     private final UserRepository userRepository;
 
     @Override
     public UserResponseDto createUser(UserCreateRequestDto request) {
-        
-        // ユーザーの作成処理
-        try{
-            UserResponseDto createdUser = UserResponseDto.fromEntity(userRepository.save(request.toEntity()));
-            return createdUser;
-        } catch (Exception e) {
-            log.error("Error creating user: {}", e.getMessage());
-            throw e;
-        }
+        UserResponseDto createdUser = UserResponseDto.fromEntity(userRepository.save(request.toEntity()));
+        return createdUser;
     }
 
 }

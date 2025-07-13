@@ -16,25 +16,17 @@ import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.web.bind.annotation.PostMapping;
 
-
 @RestController
 @RequiredArgsConstructor
 @Slf4j
 public class UserCreateController {
-    
+
     private final UserCreateService userCreateService;
-    
+
     @PostMapping("/api/v1/users")
     public ResponseEntity<UserResponseDto> createUser(@Valid @RequestBody UserCreateRequestDto userDto) {
-
-        // ユーザーの作成処理
-        try{
-            UserResponseDto createdUser = userCreateService.createUser(userDto);
-            return ResponseEntity.status(201).body(createdUser); // 作成成功時は201を返す
-        } catch (Exception e) {
-            log.error("Error creating user: {}", e.getMessage());
-            return ResponseEntity.status(500).body(null); // エラー時は500を返す
-        }
+        UserResponseDto createdUser = userCreateService.createUser(userDto);
+        return ResponseEntity.status(201).body(createdUser); // 作成成功時は201を返す
     }
-    
+
 }
