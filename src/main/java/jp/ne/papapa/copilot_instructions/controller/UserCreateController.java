@@ -11,11 +11,9 @@ import jp.ne.papapa.copilot_instructions.dto.UserCreateRequestDto;
 import jp.ne.papapa.copilot_instructions.dto.UserResponseDto;
 import jp.ne.papapa.copilot_instructions.service.UserCreateService;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @RequiredArgsConstructor
-@Slf4j
 public class UserCreateController {
 
     private final UserCreateService userCreateService;
