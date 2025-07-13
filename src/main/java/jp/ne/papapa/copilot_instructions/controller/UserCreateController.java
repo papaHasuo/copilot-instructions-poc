@@ -1,20 +1,16 @@
 package jp.ne.papapa.copilot_instructions.controller;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import jakarta.validation.Valid;
 import jp.ne.papapa.copilot_instructions.dto.UserCreateRequestDto;
 import jp.ne.papapa.copilot_instructions.dto.UserResponseDto;
-import jp.ne.papapa.copilot_instructions.repository.UserRepository;
 import jp.ne.papapa.copilot_instructions.service.UserCreateService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-
-import org.springframework.web.bind.annotation.PostMapping;
 
 @RestController
 @RequiredArgsConstructor
